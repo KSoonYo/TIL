@@ -66,7 +66,7 @@ WSGI applications are a single, synchronous callable that takes a request and re
 
 Even if we made this callable asynchronous, it still only has a single path to provide a request, so protocols that have multiple incoming events (like receiving WebSocket frames) can’t trigger this.
 
-=> 동기적으로 요청을 처리하여 response하기 때문에 여러 요청이 들어올 경우, 긴 연결을 허용하지 않는 WSGI 특성 상 대처하기가 어려움.(5개 요청 중에 2개는 응답을 못 받을 수 있음)
+=> 동기적으로 하나의 요청을 처리하여 하나의 response를 반환하기 때문에 WebSocket 연결과 같은 지속적인 연결이 필요한 경우에는 적합하지 않음
 
 => **대안**: ASGI
 
