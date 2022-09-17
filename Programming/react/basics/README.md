@@ -4,6 +4,32 @@ version
 
 - react: 18.0.0
 
+
+## 목차
+[create-react-app](##create-react-app)
+
+[component](##component)
+
+[Style](##Style)
+	[style 직접 지정](###style-직접-지정)
+	[css 파일 import](###css-파일-import)
+
+[props](##props)
+
+[state](##state)
+	[기본 state 변경](###기본-state-변경)
+	[Array(Object) state 변경](###Array(Object)-state-변경)
+
+[hooks](##hooks)
+	[React 생애 주기](###React-생애주기)
+	[useEffect](###useEffect)
+
+[전체코드](##전체코드)
+
+[References](##References)
+
+
+
 ## **create-react-app**
 
 > 조건
@@ -23,11 +49,11 @@ npm start
 2. 앱으로 이동
 3. 서버 시작
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2bcebae2-0721-40bd-9638-66afa4dc56b9%2FUntitled.png)
+![img](README.assets/create-server.png)
 
 
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8f1a5fcc-b5c1-4423-864c-17b648c8e787%2FUntitled.png)
+![img](README.assets/initial-result.png)
 
 
 
@@ -127,7 +153,7 @@ export default ComponentName
 
 - **결과화면**
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff63e163f-dfd9-47c5-b0b3-b180612386fa%2FUntitled.png)
+![img](README.assets/result1.png)
 
 2. 클래스형
 
@@ -244,7 +270,7 @@ export default ComponentName
         export default ComponentName
         ```
 
-        ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb8703f9b-a2f3-40ad-bb66-68c22c3d3127%2FUntitled.png)
+        ![img](README.assets/result2.png)
 
 - **결과화면**
 
@@ -274,7 +300,7 @@ export default ComponentName
     export default ComponentName
     ```
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F82471e21-3049-4946-90b6-d6707d7f9923%2FUntitled.png)
+    ![img](README.assets/result3.png)
 
 ### **css 파일 import**
 
@@ -325,7 +351,7 @@ export default ComponentName
 
 - 결과 화면은 태그 내에서 style을 직접 지정한 방식과 동일하다.
 
-  ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F870992b4-f85a-4f10-b812-eb3f1377a9b1%2FUntitled.png)
+  ![img](README.assets/result4.png)
 
 ## **props**
 
@@ -389,21 +415,15 @@ export default ComponentName
 
 - 하위 컴포넌트에서 props를 받는 방법
 
-  1. props 객체에 
-
-     ```
-     .
-     ```
-
-      으로 데이터 접근
+  1. props 객체에 `.`으로 데이터 접근
 
      - 상위 컴포넌트에서 전달한 모든 변수는 props 객체로 담겨서 자식 컴포넌트로 전달된다.
-
+     
   2. props 객체이므로 {} 구조 할당으로 값을 받아오는 것 또한 가능하다.
 
 **결과)**
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F38dc7408-6145-4188-bb09-f79cd6ac21d9%2FUntitled.png)
+![img](README.assets/props-result1.png)
 
 1. 함수 전달하기
    - 상위 컴포넌트에서 함수를 정의하고, 이를 하위 컴포넌트에서 실행시키는 것도 가능하다.
@@ -458,7 +478,7 @@ export default ComponentName
 
 **결과)**
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5783b589-8db7-4b64-9f8b-9b440a0dcb98%2FUntitled-166341885266918.png)
+![img](README.assets/props-result2.png)
 
 ## **state**
 
@@ -501,7 +521,7 @@ const content = "컴포넌트!(content 변수)"
 export default ComponentName
 ```
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F72a0dbc0-80d4-4ee3-b0e7-6be8f3118194%2FUntitled.png)
+![img](README.assets/state-result1.png)
 
 - 한번 값이 30으로 업데이트가 되고 render가 이미 된 상태이기 때문에 아무리 버튼을 눌러도 이미 render된 result 값은 변경되지 않는다.
 
@@ -543,7 +563,7 @@ export default ComponentName
 
 - `useState()`를 호출하면 배열이 반환 된다.
 
-  ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9aba6c4b-cfa2-4e8c-a114-9b25b338e177%2FUntitled.png)
+  ![img](README.assets/state-result2.png)
 
   - 배열의 0번째 값은 useState() 의 () 안에서 선언한 초기값이고, 1번째 값은 0번째에 설정한 값을 업데이트할 수 있는 함수
 
@@ -575,7 +595,7 @@ export default ComponentName
 
   - **결과**
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F106296c6-ed8b-4e1d-a0bc-f01f4f6587b5%2FUntitled.png)
+    ![img](README.assets/state-result3.png)
 
 - **주의점**
 
@@ -648,11 +668,11 @@ export default ComponentName
 
 - 변경 전
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdc502c59-adfc-4a5b-b77d-126ea32048b3%2FUntitled.png)
+![img](README.assets/state-result4.png)
 
 - 변경 후
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3914d7e8-3eb0-418e-bbca-95f2e3c08f0f%2FUntitled.png)
+![img](README.assets/state-result5.png)
 
 ## **hooks**
 
@@ -662,7 +682,7 @@ export default ComponentName
 
 ### **React 생애주기**
 
-![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F24d36918-2764-4a16-aa9b-f19aff842968%2FUntitled.png)
+![img](README.assets/hooks1.png)
 
 요약
 
@@ -698,13 +718,13 @@ export default ComponentName
 
   - 컴포넌트 재렌더링(새로고침 등) → 컴포넌트에 정의한 모든 코드들이 `컴포넌트가 mounted 될 때`, `state가 update` 될 때, 이렇게 총 두 번 실행되면서 콘솔에 '재렌더링!'이 2번 찍히게 된다.
 
-  !![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdf47c29c-1a22-436a-b819-9a3f27b817cb%2FUntitled.png)
+  !![img](README.assets/hooks2.png)
 
   - 이때 `+1` 버튼을 눌러 `changeValue` state를 변경하면 아래와 같이 '재렌더링!'이 또 2번 찍히는 것을 알 수 있다.
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fda0b2cc9-9f53-4acc-9115-753acf6d549d%2FUntitled.png)
+    ![img](README.assets/hooks3.png)
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F11808d9d-c5dd-4957-84c3-9853e237a467%2FUntitled.png)
+    ![img](README.assets/hooks4.png)
 
     - 왜냐하면 `changeValue` 라는 state가 변경되면서 컴포넌트 전체가 재렌더링이 되었기 때문이다.
 
@@ -736,7 +756,7 @@ export default ComponentName
 
   - 아래는 `mounted` , `updated` 시점에 콘솔로 출력된 결과다.
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3f523594-63f5-4e9a-9e25-85b222e54ac7%2FUntitled.png)
+    ![img](README.assets/useEffect1.png)
 
 - 특정 state 값 변경만 감지하고 싶을 때
 
@@ -763,17 +783,17 @@ export default ComponentName
 
     - 위와 같이 useEffect를 사용하면 `컴포넌트가 mounted, updated` 될 때와 `changeValue 라는 state가 변경될 때` 에만 '재렌더링!'이 콘솔에 찍힌다.
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6b06b08d-3e15-4bd5-9cd7-22dc5e80ceb3%2FUntitled.png)
+    ![img](README.assets/useEffect2.png)
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Febb4ccf9-38ef-4d55-9841-fbd24354fa80%2FUntitled.png)
+    ![img](README.assets/useEffect3.png)
 
     - 위는 순서대로 mounted 될 때, state 초기 값이 updated 될 때, 버튼으로 state를 update를 했을 때 콘솔 결과이다.
 
     
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd9e37863-6c32-40d2-a1c8-bd4f22f70faf%2FUntitled.png)
+    ![img](README.assets/useEffect4.png)
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8992b713-bac9-4d3a-96aa-3e0eb3c31281%2FUntitled.png)
+    ![img](README.assets/useEffect5.png)
 
     - change array 버튼으로 test array state가 변경되었지만 콘솔에는 ''재렌더링!'이 찍히지 않는다.
 
@@ -814,7 +834,7 @@ export default ComponentName
 
     - 새로고침했을 때 console
 
-      ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa7cb9ffa-4d36-4569-8be5-2b1cd90cc4bf%2FUntitled.png)
+      ![img](README.assets/useEffect6.png)
 
       - 재렌더링이 한번만 콘솔에 출력됨을 확인할 수 있다.
 
@@ -845,7 +865,7 @@ export default ComponentName
       3. 초기 state 값이 갱신된다.(updated)
     - 위 코드는 2번 과정이 if문으로 분기처리가 되었으므로 **`새로고침`을 했을 때 콘솔 창에는 아래와 같이 '페이지 탈출'과 '재렌더링!' 이 순서대로 출력**되어야 한다.
 
-    ![img](README.assets/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5d5976d5-b5d7-4e16-bd38-e455dd9427b7%2FUntitled.png)
+    ![img](README.assets/unmounted.png)
 
     - state가 변경될 때에도 재렌더링이 되므로 콘솔에는 페이지 탈출이 가장 위에 출력된다.
 
