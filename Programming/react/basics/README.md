@@ -6,31 +6,31 @@ version
 
 
 ## 목차
-[create-react-app](##create-react-app)
+[create-react-app](#create-react-app)
 
-[component](##component)
+[component](#component)
 
-[Style](##Style)
-	[style 직접 지정](###style-직접-지정)
-	[css 파일 import](###css-파일-import)
+[Style](#style)
+	[style 직접 지정](#style-직접-지정)
+	[css 파일 import](#css-파일-import)
 
-[props](##props)
+[props](#props)
 
-[state](##state)
-	[기본 state 변경](###기본-state-변경)
-	[Array(Object) state 변경](###Array(Object)-state-변경)
+[state](#state)
+	[기본 state 변경](#기본-state-변경)
+	[Array(Object) state 변경](#array(object)-state-변경)
 
 [hooks](##hooks)
-	[React 생애 주기](###React-생애주기)
-	[useEffect](###useEffect)
+	[React 생애 주기](#eeact-생애주기)
+	[useEffect](#useeffect)
 
-[전체코드](##전체코드)
+[전체코드](#전체코드)
 
-[References](##References)
+[References](#References)
 
 
 
-## **create-react-app**
+# **create-react-app**
 
 > 조건
 >
@@ -57,7 +57,7 @@ npm start
 
 
 
-## **component**
+# **component**
 
 > React에서는 JSX(JavaScript + XML) 라는 특수한 문법으로 렌더링할 컴포넌트를 독립적으로 관리할 수 있다.
 
@@ -194,9 +194,9 @@ export default ComponentName
   - 달라진 것은 함수형으로 선언한 부분을 **React.Component를 상속한 class로 선언**해주고, return문을 `render()` 함수 내에서 처리해준다는 것 뿐이다.
   - 실행 결과 화면은 동일
 
-## **Style**
+# **Style**
 
-### **style 직접 지정**
+## **style 직접 지정**
 
 - ComponentName의 style을 아래와 같이 선언해서 스타일을 지정해줄 수 있다.
 
@@ -302,7 +302,7 @@ export default ComponentName
 
     ![img](README.assets/result3.png)
 
-### **css 파일 import**
+## **css 파일 import**
 
 - `ComponentName.css` 를 생성하여 import 하는 방식으로도 스타일링이 가능하다.
 
@@ -353,7 +353,7 @@ export default ComponentName
 
   ![img](README.assets/result4.png)
 
-## **props**
+# **props**
 
 > props로 부모 컴포넌트에서 자식 컴포넌트로 변수값과 함수를 전달할 수 있다.
 
@@ -480,11 +480,11 @@ export default ComponentName
 
 ![img](README.assets/props-result2.png)
 
-## **state**
+# **state**
 
 > useState로 SPA 상에서 자주 변경되는 데이터를 관리할 수 있으며 props로 전달 또한 가능하다.
 
-### **기본 state 변경**
+## **기본 state 변경**
 
 - 기본적으로 컴포넌트 내부에서 선언되고 초기값이 할당된 데이터는 한번 렌더링 되고 나서는 이후에 변경이 되어도 화면 상에 반영되지 않는다.
 
@@ -613,7 +613,7 @@ export default ComponentName
 
   - state를 변경할 때에도 state 값을 직접 set 함수에 넣는 대신, 임시 변수에 값을 전달해서 set 함수 인자로 임시 변수를 넣는 걸 권장
 
-### **Array(Object) state 변경**
+## **Array(Object) state 변경**
 
 - JS 상에서 Array는 직접 참조가 되기 때문에 임시 변수에 값을 복사한 다음, 복사된 값을 변경해서 set 함수 인자로 넣어줘야 한다.
   - for문을 이용하는 등 다양한 복사 방법이 있지만, ES6의 `구조 분해 할당`을 활용하면 쉽게 복사 가능하다.
@@ -674,13 +674,13 @@ export default ComponentName
 
 ![img](README.assets/state-result5.png)
 
-## **hooks**
+# **hooks**
 
 > 리엑트는 다양한 hook을 제공하고 있다.
 >
 > 대표적으로 useEffect 훅이 굉장히 많이 쓰인다.
 
-### **React 생애주기**
+## **React 생애주기**
 
 ![img](README.assets/hooks1.png)
 
@@ -690,7 +690,7 @@ export default ComponentName
 - updated : 값이 변경될 때(초기 데이터 값 설정 및 갱신, state 업데이트 등 )
 - unmounted : 컴포넌트가 화면에 없어질 때(=페이지 이탈)
 
-### **useEffect**
+## **useEffect**
 
 컴포넌트가  `mounted`, `updated`, `unmounted` 될 때 동작을 `useEffect` 하나로 설정 가능하다.
 
@@ -869,7 +869,7 @@ export default ComponentName
 
     - state가 변경될 때에도 재렌더링이 되므로 콘솔에는 페이지 탈출이 가장 위에 출력된다.
 
-## 전체 코드
+# 전체 코드
 
 - code
 
@@ -959,7 +959,7 @@ export default ComponentName
   }
   ```
 
-## **References**
+# **References**
 
 React를 공부하면서 참고하면 아주 좋은 사이트
 
