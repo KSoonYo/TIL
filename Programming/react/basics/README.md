@@ -11,18 +11,18 @@ version
 - [component](#component)
 
 - [Style](#style)
-- [style 직접 지정](#style-직접-지정)
-- [css 파일 import](#css-파일-import)
+	- [style 직접 지정](#style-직접-지정)
+	- [css 파일 import](#css-파일-import)
 
 - [props](#props)
 
 - [state](#state)
-- [기본 state 변경](#기본-state-변경)
-- [Array(Object) state 변경](#array(object)-state-변경)
+	- [기본 state 변경](#기본-state-변경)
+	- [Array(Object) state 변경](#array(object)-state-변경)
 
 - [hooks](#hooks)
-- [React 생애 주기](#eeact-생애주기)
-- [useEffect](#useeffect)
+	- [React 생애 주기](#eeact-생애-주기)
+	- [useEffect](#useeffect)
 
 - [전체코드](#전체코드)
 
@@ -869,7 +869,7 @@ export default ComponentName
 
     - state가 변경될 때에도 재렌더링이 되므로 콘솔에는 페이지 탈출이 가장 위에 출력된다.
 
-# 전체 코드
+# 전체코드
 
 - code
 
