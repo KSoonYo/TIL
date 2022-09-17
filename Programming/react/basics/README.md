@@ -6,28 +6,20 @@ version
 
 
 ## 목차
-[create-react-app](#create-react-app)
-
-[component](#component)
-
-[Style](#style)
-	[style 직접 지정](#style-직접-지정)
-	[css 파일 import](#css-파일-import)
-
-[props](#props)
-
-[state](#state)
-	[기본 state 변경](#기본-state-변경)
-	[Array(Object) state 변경](#array(object)-state-변경)
-
-[hooks](##hooks)
-	[React 생애 주기](#eeact-생애주기)
-	[useEffect](#useeffect)
-
-[전체코드](#전체코드)
-
-[References](#References)
-
+- [**create-react-app**](#--create-react-app--)
+- [**component**](#--component--)
+- [**Style**](#--style--)
+  - [**style 직접 지정**](#--style--------)
+  - [**css 파일 import**](#--css----import--)
+- [**props**](#--props--)
+- [**state**](#--state--)
+  - [**기본 state 변경**](#-----state-----)
+  - [**Array(Object) state 변경**](#--array-object--state-----)
+- [**hooks**](#--hooks--)
+  - [**React 생애주기**](#--react-------)
+  - [**useEffect**](#--useeffect--)
+- [전체 코드](#-----)
+- [**References**](#--references--)
 
 
 # **create-react-app**
