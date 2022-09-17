@@ -18,10 +18,10 @@ version
 
 - [state](#state)
 	- [기본 state 변경](#기본-state-변경)
-	- [Array(Object) state 변경](#array(object)-state-변경)
+	- [Array(Object) state 변경](#array-object--state-변경)
 
 - [hooks](#hooks)
-	- [React 생애 주기](#eeact-생애-주기)
+	- [React 생애주기](#eeact-생애주기)
 	- [useEffect](#useeffect)
 
 - [전체코드](#전체코드)
