@@ -118,8 +118,8 @@ fetch('url')
 .then((result) => { console.log(result)} )
 ```
 
-- setTimeout 함수에 등록한 callback 함수를 3초 후에 실행하여 text를 반환하긴 하지만, wait 함수 자체는 반환값이 없기 때문에 가장 마지막에 result가 출력된다.
-  - 따라서 이러한 경우에 chaining이 불가능하다.
+- setTimeout 함수에 등록한 callback 함수는 3초 후에 실행되어 text가 반환되지만, wait 함수 자체는 반환값이 없기 때문에 가장 마지막에 result는 undefined로 출력된다.
+  - 따라서 이러한 경우에는 결과값 text를 잇는 chaining이 불가능하다.
 - 이때 wait을 promise 객체화 하여 3초 후에 결과값을 반환하는 작업을 다음과 같이 작성 가능
 
 ```js
