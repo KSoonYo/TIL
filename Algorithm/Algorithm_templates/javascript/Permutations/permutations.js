@@ -1,5 +1,5 @@
 
-// 순열: n!
+// 순열
 function permutations(arr, n){
   if(n === 1){
     return arr.map((v) => [v])
