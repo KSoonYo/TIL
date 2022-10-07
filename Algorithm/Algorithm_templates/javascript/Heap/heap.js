@@ -13,7 +13,7 @@ class Heap{
       
       let currentIndex = this.heap.length - 1
       let parentIndex = Math.floor(currentIndex / 2)
-      while(parentIndex !== 0 || this.heap[parentIndex] > value){
+      while(currentIndex > 1 && this.heap[parentIndex] > value){
           const temp = this.heap[parentIndex]
           this.heap[parentIndex] = value
           this.heap[currentIndex] = temp
@@ -64,5 +64,4 @@ class Heap{
       return value
   }
 }
-
 
