@@ -125,3 +125,47 @@ arr.sort((a, b) => {
 console.log(arr)
 ```
 
+
+
+## 배열 내 문자열 숫자 정렬
+
+- 기본적으로 js에서 sort() 는 배열 요소 내에 숫자를 문자열로 변환하여 정렬
+
+- `'1', '10', '3', '6', '52' '100'` 의 경우,
+  - 예를 들어 내림차순의 경우에는`'100', '10', '1', '3', '52', '6'`으로 정렬되어야 함
+
+```js
+const numbers = ['1', '10', '3', '6', '52' '100']
+
+numbers.sort()			// 오름차순
+numbers.sort((a, b) => (a + b) - (b + a)) // 오름차순
+numbers.sort((a, b) => (b + a) - (a + b)) // 내림차순
+
+```
+
+
+
+## 배열 내 문자 사전 순 정렬
+
+- sort() 자체 기능으로 오름차순 사전 순 정렬 가능
+
+- String일 때는 `-` 를 이용한 축약형으로 정렬 불가
+
+```js
+const words = ['banana', 'apple', 'dagree', 'cold']
+// 오름차순(사전순)
+words.sort()
+
+// 내림차순 정렬 방법 1
+words.sort()
+words.reverse()
+
+// 내림차순 정렬 방법 2
+words.sort((a, b) => {
+    if(a > b) return -1
+    else if(b > a) return 1
+    else return 0
+})
+
+```
+

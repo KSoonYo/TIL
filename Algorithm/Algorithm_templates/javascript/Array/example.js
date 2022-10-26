@@ -67,3 +67,31 @@ arr.sort((a, b) => {
 })
 
 console.log(arr)
+
+// 문자열 숫자 정렬
+const numbers = ['1', '10', '3', '6', '52', '100']
+numbers.sort() // 오름차순
+numbers.sort((a, b) => (a + b) - (b + a)) // 오름차순
+numbers.sort((a, b) => (b + a) - (a + b)) // 내림차순
+console.log(numbers)
+
+
+// 문자열 사전 순 정렬
+const words = ['banana', 'apple', 'dagree', 'cold']
+
+// 오름차순(사전순)
+words.sort()
+
+// 내림차순 정렬 방법 1
+words.sort()
+words.reverse()
+
+// 내림차순 정렬 방법 2
+words.sort((a, b) => {
+    if(a > b) return -1
+    else if(b > a) return 1
+    else return 0
+})
+
+console.log(words)
+
