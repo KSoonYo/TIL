@@ -27,7 +27,17 @@ const toString = array.join('')
 console.log(toString) // output: abc
 ```
 
+## 배열 내 요소 중복 제거
+```js
+const arr = ['a', 'a', 'b', 'c'];
 
+// 1) Set 이용
+const arr2 = [...new Set(arr)];
+
+// 2) reduce(), includes() 이용
+const arr3 = arr.reduce((ac, v) => ac.includes(v) ? ac : [...ac, v] ,[]);
+```
+- Set을 이용하는 것이 시간이 조금 더 빠른 편이다.
 
 ## 2차원 배열 만들기
 
