@@ -6,9 +6,9 @@ https://www.hackerrank.com/challenges/magic-square-forming/problem
 
 - 3 x 3 행렬 밖에 안되므로 가능한 magic square를 모두 구해서 원래 행렬과 비교하며 최소값을 갱신 방식으로 풀어도 ok
 - 아예 가능한 모든 magic square를 모두 선언해버리는 방식도 괜찮다.(경우의 수가 얼마 없기 때문)
-  - 이 풀이에서는 재귀로 가능한 경우를 모두 구한 뒤에 magic square의 조건을 체크하는 방식으로 풀이
+  - 아래 풀이에서는 재귀로 가능한 경우를 모두 구한 뒤에 magic square의 조건을 체크하는 방식으로 풀이
   - 조건) magic square는 좌 우 대각선 및 가로, 세로의 합이 모두 같아야 한다.
-- 총 경우의 수는 9! 가지
+- 1 ~ 9 범위 이내로 3x3 행렬을 만들 수 있는 총 경우의 수는 9! 가지
 
 ```ts
 function check(arr: number[][]) {
