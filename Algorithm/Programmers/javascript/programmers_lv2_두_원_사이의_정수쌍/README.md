@@ -13,23 +13,20 @@ https://school.programmers.co.kr/learn/courses/30/lessons/181187
   - 팁) 사분면 하나에 대해서 계산하고 마지막에 \*4를 하면 쉽게 구할 수 있다.
   - y1에서 올림 처리를 하는 이유?: 예를 들어 r1 원 내부의 점을 구할 때, y 좌표 상으로는 1.xxx이면 실제 원 내부의 점 개수는 2개가 된다. 따라서 r1 내부의 점 개수는 계산한 y좌표에서 올림 처리를 하여 구한다.
 
-```python
-import math
+```js
+function solution(r1, r2) {
+  var answer = 0;
+  // x^2 + y^2 = r^2
 
-def solution(r1, r2):
-    # 원의 방정식
-    # (x-a)^2 + (x-b)^2 = r^2
-    # 원 내부의 점 조건 -> (x - a)^2 + (x - b)^2 < r^2
-    # 사분면 하나에 대한 점 개수를 구하고 * 4(이때 x = 0일때를 제외해서 겹치는 부분 제거)
-    # 주의) 올림처리를 math.floor() 혹은 int()로 하고 +1을 해서 처리하면,
-    # 5^2 - 3^2 = 4^2 경우에 대해서 y = 4가 되어야 함에도 y = 5가 되어 버린다.(원 위에 있는 점은 빼면 안된다!)
-    cnt = 0
-    for x in range(1, r2 + 1):
-        y1 = 0
-        if x < r1:
-            y1 = math.ceil((r1 ** 2 - x ** 2) ** 0.5)
-        y2 = math.floor((r2 ** 2 - x ** 2) ** 0.5)
-        cnt += (y2 - y1 + 1)
-    return cnt * 4
+  for (let x = 1; x <= r2; x++) {
+    let [y1, y2] = [0, 0];
+    if (x < r1) {
+      y1 = Math.ceil((r1 ** 2 - x ** 2) ** 0.5);
+    }
+    y2 = Math.floor((r2 ** 2 - x ** 2) ** 0.5) + 1;
+    answer += y2 - y1;
+  }
 
+  return answer * 4;
+}
 ```
