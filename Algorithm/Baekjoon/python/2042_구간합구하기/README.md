@@ -109,7 +109,7 @@ def update(start, end, index, target, diff):
 N, M, K = map(int, input().split())
 
 # segment tree
-tree = [0] * (N * 4 + 1)                # 세그먼트 트리의 길이는 배열 길이 N
+tree = [0] * (N * 4 + 1)                # 세그먼트 트리의 길이는 배열 길이 N * 4 + 1을 최대로 설정
 arr = [0] * (N + 1)
 for i in range(1, N + 1):
     arr[i] = int(input())
