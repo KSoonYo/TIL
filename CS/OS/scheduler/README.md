@@ -126,13 +126,6 @@
 - context switching 오버헤드
   ![dispatch_latency_example](./assets/2023-09-25-19-21-45.png)
 
-## 스케줄링 알고리즘의 종류
-
-- 선점형
-- 비선점형
-
-## FCFS(First come First served)
-
 # References
 
 패스트캠퍼스 컴퓨터 공학 올인원 패키지 교재 - 김혜겸
