@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ink Splatter Animation</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      canvas {
+        border: 1px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      window.addEventListener("click", (e) => {
+        splatter(e.x, e.y);
+      });
+
+      const particles = [];
+
+      function splatter(posX, posY) {
+        const baseSize = 10;
+        const baseSpeed = 5;
+        const baseParticles = 20;
+
+        for (let i = 0; i < baseParticles; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * baseSpeed + 1;
+          const size = Math.random() * baseSize + 5;
+          const color = getRandomColor();
+
+          const dx = Math.cos(angle) * speed;
+          const dy = Math.sin(angle) * speed;
+
+          const x = posX;
+          const y = posY;
+
+          particles.push({ x, y, dx, dy, size, color });
+        }
+
+        if (particles.length > 0) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      function update() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p, index) => {
+          p.x += p.dx;
+          p.y += p.dy;
+          p.size *= 0.97; // Decrease particle size over time
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+
+          if (p.size < 1) {
+            particles.splice(index, 1); // Remove small particles
+          }
+        });
+
+        if (particles.length > 0) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+  </body>
+</html>
