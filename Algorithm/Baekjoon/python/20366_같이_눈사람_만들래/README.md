@@ -1,0 +1,49 @@
+# 문제
+
+https://www.acmicpc.net/problem/20366
+
+# 풀이방법
+
+- N이 600이기 때문에 조합과 조건문으로 풀이 가능
+- 두 사람 중 한 사람의 눈덩이 2개의 조합으로 만들 수 있는 눈사람 키를 선택하고, 나머지 눈덩이 조합으로 만들 수 있는 모든 눈사람과 키 차이를 계산하여 최소값 갱신
+  - 이때, 눈사람 집합은 눈사람의 키 순으로 오름차순 정렬이 되어 있어야 `**이전에 선택하지 않은 나머지 눈덩이 조합으로 만들 수 있는 눈사람**`의 하한 조건을 만족할 때 최소값을 갱신하고 바로 break할 수 있음 -> 시간 단축
+
+```python
+from itertools import combinations
+
+N = int(input())
+snows = list(map(int, input().split()))
+candidates_origin = []
+
+for i in range(N):
+    candidates_origin.append((i, snows[i]))
+
+# 2개의 눈뭉치로 만들 수 있는 눈사람 집합(눈덩이 2개의 조합)
+candidates = list(combinations(candidates_origin, 2))
+
+# 눈사람의 키 오름차순으로 정렬
+candidates.sort(key=lambda x: x[0][1] + x[1][1])
+
+length = len(candidates)
+minV = 1000000001
+for k in range(length):
+    a1, a2 = candidates[k]
+    idx1, idx2 = a1[0], a2[0]
+    value1 = a1[1] + a2[1]
+    # value1과 value2는 각각 안나와 엘사(혹은 엘사와 안나)가 선택한 눈사람
+    for h in range(k + 1, length):
+        b1, b2 = candidates[h]
+        idx3, idx4 = b1[0], b2[0]
+
+        # 다른 사람이 이미 고른 눈덩이는 제외
+        if idx1 == idx3 or idx1 == idx4 or idx2 == idx3 or idx2 == idx4:
+            continue
+        value2 = b1[1] + b2[1]
+        minV = min(minV, abs(value2 - value1))
+
+        # 눈사람 키 순으로 오름차순 정렬을 한 상태이기 때문에 이후의 눈사람을 고르면 차이가 더 커지기만 한다.
+        # 최소의 차를 구하는 것이므로 최소값 갱신 이후 break
+        break
+print(minV)
+
+```
